@@ -1,0 +1,12 @@
+# Export all names
+exportPattern(".")
+
+useDynLib(phenmod)
+
+# Import all packages listed as Imports or Depends
+import(
+	gstat,
+	RColorBrewer,
+	lattice,
+	pheno
+)

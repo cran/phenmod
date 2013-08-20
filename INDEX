@@ -1,0 +1,24 @@
+data.addTemperatures			Adds a temperature vector to a dataset containing spatial and seasonal phenological information.
+data.combine.clusters			Creates a list of station clusters.
+data.combine.clusters.search		Searches clusters in a station net.
+data.combine				Creates a station net and builds clusters of stations out of it.
+data.combine.stationNet			Creates a net of the stations of dataset by checking the distances between the stations.
+data.combine.timeseries			Creates combined timeseries out of the dataset by using clusters of stations.
+data.coordinates2gridcellnumber		Searches the number of the cell of a given spatial grid by given coordinates (Gauss-Krueger-Coordinates).
+data.extract				Extracts the essential data out of budburst and leafcolouring data and combines them.
+data.loadTemperature			Loads a temperature vector of given length from a given day of a given year.
+data.main 				Extracts data from tsv-Files, creates combined timeseries out of them if needed and adds temperature data.
+data.read.phase				Reads phenological data out of a tsv-table.
+pim.solve				Applies a promoter-inhibitor-model to a given dataset.
+tsm.solve				Applies a temperature-sum-model to a given dataset.
+result.extract.interpolate		Interpolates result values with given spatial information.
+result.extract.main			Extracts essential results from model.
+result.extract.mask			Masks values with the spatial informations of a given grid.
+result.extract.sub			Extracts and transformates given values to a data.frame with same order as a given masking grid.
+result.main				Main function for result evaluation.
+result.pic.histogramm			Creates histogramms of results.
+result.pic.maps				Creates maps out of results.
+result.pic.scatterplot			Creates a scatterplot out of result values.
+result.rsquare				Calculates the r-square value of a model.
+util.geoco2gk				Converts geographic coordinates to Gauss-Krueger-Coordinates.
+util.isLeapYear				Checks wether a given year is a leap year or not.
