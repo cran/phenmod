@@ -54,12 +54,11 @@ tsm.solve <- function(params, data, silent=FALSE, out2File=FALSE){
 		if (is.na(data$doy.lc[dataset.nr])){
 			data$doy.bb.tsm[dataset.nr] <- NA
 		} else {
-			bb.doy.tsm <- .C("tsModel", 
+			bb.doy.tsm <- .C(C_tsModel, 
 				params=as.numeric(params), 
 				lcdoy=as.integer(round(data$doy.lc[dataset.nr])),
 				year=as.integer((data$year.lc[dataset.nr]+1)), 
-				temperaturevec=temperatures, budburstdoy=as.integer(bb.doy.tsm), 
-				PACKAGE="phenmod")$budburstdoy
+				temperaturevec=temperatures, budburstdoy=as.integer(bb.doy.tsm))$budburstdoy
 			if (bb.doy.tsm == 0){
 				data$doy.bb.tsm[dataset.nr] <- NA
 			} else {

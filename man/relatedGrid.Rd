@@ -5,7 +5,7 @@
 \description{
 This dataset, based on a digital elevation model contains spatial information related to the temperature data.
 }
-\usage{relatedGrid}
+\usage{data(relatedGrid)}
 \format{A dataframe containing spatial information.}
 \source{digital elevation model}
 \seealso{\code{\link{temperatures}}}

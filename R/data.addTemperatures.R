@@ -69,7 +69,7 @@ data.addTemperatures <- function(dataset, grid.related.to.Temperatures,
 				} else {
 					filename <- searchFile(temperature.filenames, year+1)
 					if (file.exists(filename)){
-						load(file)
+						load(filename)
 						temperature.year <- edk.one.year
 					} else {
 						temperature.year <- matrix(NA, 366, 

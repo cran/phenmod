@@ -166,33 +166,15 @@ double getDaylength(double lat, int doy, int year){
 double getDeclination(int year, int doy){
 	double decl=999;
 	double declsol=23.43889;
-	int doysol=0, i=0;
+	int yearlength=0;
 	
 	if (isLeapYear(year)==0){
-		doysol=172;	
+		yearlength=365;	
 	} else {
-		doysol=173;
+		yearlength=366;
 	}	
 
-	if (doy == doysol){
-		decl = declsol;
-	}
-	if (doy == (doysol+183)){
-		decl=-declsol;
-	}
-	if (doy < doysol){
-		decl= -declsol + ((2.0*declsol) / ((double) (11+doysol)))*( (double) (11+doy));
-	}
-	if ((doy > doysol)&&(doy < (doysol+183))){
-		decl= declsol - ((2.0*declsol) / 183.0)*((double) (doy-doysol));
-	}
-	if (doy > (doysol+183)){
-		if ((isLeapYear(year)==1)||(isLeapYear(year+1)==1)){
-			decl= -declsol + ((2.0*declsol) / 184.0)*((double) (doy-(doysol+183)));
-		} else {
-			decl= -declsol + ((2.0*declsol) / 183.0)*((double) (doy-(doysol+183)));
-		}
-	}
+	decl = sin(((doy-81)/yearlength)*2*M_PI)*declsol;
 
 	return decl;
 }

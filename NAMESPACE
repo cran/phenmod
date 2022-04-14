@@ -1,12 +1,20 @@
-# Export all names
-exportPattern(".")
-
-useDynLib(phenmod)
-
 # Import all packages listed as Imports or Depends
-import(
-	gstat,
-	RColorBrewer,
-	lattice,
-	pheno
-)
+import(gstat)
+import(RColorBrewer)
+import(lattice)
+import(pheno)
+importFrom("graphics", "abline", "axis", "hist", "legend", "lines")
+importFrom("grDevices", "dev.off", "gray", "png")
+importFrom("stats", "lm", "na.pass", "pf", "rnorm")
+importFrom("utils", "flush.console", "read.delim")
+
+# C code
+useDynLib(phenmod, .registration=TRUE, .fixes="C_")
+
+# Export all names
+exportPattern("data.*")
+exportPattern("pim.solve")
+exportPattern("result.*")
+exportPattern("tsm.solve")
+exportPattern("util.*")
+

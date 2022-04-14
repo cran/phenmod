@@ -22,7 +22,7 @@
 	\sQuote{OBS_YEAR} (the year at which \sQuote{OBS_DAY} was observed),
 	\sQuote{CHECKED} (a value determining wether the result was checked or not),
 	\sQuote{outlier} (if result was checked, this value determines wether it was an outlier or not).
-	Such a dataset can be obtained at \url{www.phenology.de}.}
+	Such a dataset can be obtained at \url{http://www.phenology.de}.}
 \value{Returns the table as R-Dataframe.}
 \references{Dierenbach, J., Badeck, F.W., Schaber, J., 2013. The plant phenological online database (PPODB): an online database for long-term phenological data. International Journal of Biometeorology , 1-8.}
 \author{Daniel Doktor, Maximilian Lange}

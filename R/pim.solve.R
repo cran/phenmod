@@ -64,14 +64,13 @@ pim.solve <- function(params, data, model.no=1, silent=FALSE, out2File=FALSE){
 		if (is.na(data$doy.lc[dataset.nr])){
 			data$doy.bb.pim[dataset.nr] <- NA
 		} else {
-			bb.doy.pim <- .C("pimModel", 
+			bb.doy.pim <- .C(C_pimModel, 
 				params=as.numeric(params), 
 				lcdoy=as.integer(round(data$doy.lc[dataset.nr])),
 				year=as.integer((data$year.lc[dataset.nr]+1)), 
 				latitude=as.numeric(data$latitude[dataset.nr]),
 				temperaturevec=temperatures,modelno=as.integer(model.no), 
-				budburstdoy=as.integer(bb.doy.pim), 
-				PACKAGE="phenmod")$budburstdoy
+				budburstdoy=as.integer(bb.doy.pim))$budburstdoy
 			if (bb.doy.pim == 0){
 				data$doy.bb.pim[dataset.nr] <- NA
 			} else {
